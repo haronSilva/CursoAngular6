@@ -1,6 +1,10 @@
 <app-header [cabecalho]="titulo"></app-header>
 <!--O uso do property binding é importante para habilitar o uso de tipos complexos. Sem isso, 
-o angular sempre vai entender como uma string -->
+o angular sempre vai entender como uma string 
 <app-student [student]="luke"></app-student>
 <app-student [student]="leia"></app-student>
 <app-student [student]="han"></app-student>
+-->
+<!--Usando a diretiva ngFor para deixar o código mais enxuto-->
+
+<app-student *ngFor="let estudante of students" [student] = "estudante"></app-student>

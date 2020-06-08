@@ -1,8 +1,18 @@
 <div>
     <!--Using template interpolation-->
     Student: {{student.name}}
-    <!--Example to use binding property-->
+    <!--Example to use binding property
     <div [hidden] = "!student.isJedi">
-        Jedi Temple Coruscant
+        Jedi Temple {{student.temple}}
+    </div>
+    -->
+    <!--Boas práticas no uso de esconder ou mostrar objetos: DIRETIVAS
+        Com diretivas não há necessidade de usar interpolação!
+    -->
+    <!--Caso eu não passe parâmetros, haverá  um erro no console indicando que eu n passei nada para o objeto
+    Eu posso nesse caso usar o ? em casa objeto (student?) para que em caso ele identifica undefined ele n faz nada
+    Mas eu posso também usar a diretiva ngIf para constar que o objeto existe ou não-->
+    <div *ngIf="student.isJedi">
+        Jedi Temple {{student.temple}}
     </div>
 </div>
