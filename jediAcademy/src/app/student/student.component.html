@@ -1,6 +1,7 @@
 <div>
     <!--Using template interpolation-->
-    Student: {{student.name}}
+    <!--Criando eventos: Para ação desejada envolver com parênteses e atribuir ao método que consta no componente-->
+    Student: <a href="#" (click)="clicked()">{{student.name}}</a>
     <!--Example to use binding property
     <div [hidden] = "!student.isJedi">
         Jedi Temple {{student.temple}}
@@ -13,6 +14,10 @@
     Eu posso nesse caso usar o ? em casa objeto (student?) para que em caso ele identifica undefined ele n faz nada
     Mas eu posso também usar a diretiva ngIf para constar que o objeto existe ou não-->
     <div *ngIf="student.isJedi">
-        Jedi Temple {{student.temple}}
+        Jedi Temple {{student.temple}} <br/>
+        <!--Template variables: Eu referencio um id para meu componente e em outor eu poderei acessar seus métodos para 
+        realizar qualquer tipo de comportamento: Ex. abaixo-->
+        <button (click)="descricao.focus()">Focus</button> <br/>
+        <textarea #descricao></textarea>
     </div>
 </div>
